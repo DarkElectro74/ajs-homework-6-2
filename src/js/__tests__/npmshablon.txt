@@ -1,0 +1,97 @@
+npm init
+npm install --save-dev @babel/core @babel/cli @babel/preset-env
+npm install @babel/polyfill core-js@3
+
+"scripts": {
+"start": "live-server src",
+"test": "echo \"Error: no test specified\" && exit 1",
+"lint": "eslint .",
+"build": "babel src -d dist"
+},
+
+Создайте конфиг .babelrc и пропишите @babel/preset-env:
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "usage",
+        "corejs": 3
+      }
+    ]
+  ]
+}
+
+?
+.babelrc:
+{
+"plugins": ["@babel/plugin-proposal-optional-chaining"]
+}
+?
+
+npm run build
+
+
+npm install --save-dev eslint
+npx eslint --init
+.eslintrc.json
+"scripts": {
+"start": "live-server src",
+"test": "echo \"Error: no test specified\" && exit 1",
+"lint": "eslint ."
+},
+
+.eslintignore :
+
+npm run lint
+
+npm run lint -- --fix
+
+npm install --save-dev webpack webpack-cli babel-loader
+"scripts": {
+...
+"build": "webpack --mode production"
+},
+webpack.config.js:
+npm install --save-dev html-webpack-plugin
+npm install --save-dev mini-css-extract-plugin css-loader
+npm i -D html-loader
+npm run build
+
+npm install --save-dev webpack-dev-server
+
+"scripts": {
+"start": "webpack-dev-server --mode development",
+"lint": "eslint .",
+"build": "webpack --mode production"
+},
+npm start
+
+npm install --save-dev jest babel-jest @babel/core @babel/cli @babel/preset-env
+npm install core-js@3
+
+"scripts": {
+"test": "jest",
+"lint": "eslint .",
+},
+
+.babelrc :
+{
+"presets": [["@babel/preset-env", {
+"useBuiltIns": "usage",
+"corejs": 3
+}]]
+}
+
+.eslintrc.json :
+"env": {
+...
+"jest": true
+}
+
+npm test
+
+npm test -- --coverage
+
+.appveyor.yml
+
